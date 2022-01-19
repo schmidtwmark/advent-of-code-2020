@@ -16,6 +16,7 @@ fn main() {
         .unwrap_or_else(|_| panic!("Something went wrong reading the file {}", filename));
 
     let re = Regex::new(r"^(\d*)-(\d*) (.): (.*)").unwrap();
+
     let passwords: Vec<(Policy, String)>= contents.split('\n').map(|line| {
         let matches = re.captures_iter(line).next().unwrap();
         println!("matches: {:?}", matches);

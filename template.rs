@@ -11,5 +11,16 @@ fn main() {
 
     let contents = fs::read_to_string(filename)
         .unwrap_or_else(|_| panic!("Something went wrong reading the file {}", filename));
-    let mut input_lines = contents.split('\n');
+    let input_lines = contents.lines().collect_vec();
+
+    part_one(&input_lines);
+    part_two(&input_lines);
+}
+
+fn part_one(lines: &[&str]) {
+
+}
+
+fn part_two(lines: &[&str]) {
+
 }
