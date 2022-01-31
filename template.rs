@@ -18,9 +18,9 @@ fn main() {
 }
 
 fn part_one(lines: &[&str]) {
-
+    println!("Part 1: {}", 0)
 }
 
 fn part_two(lines: &[&str]) {
-
+    println!("Part 2: {}", 0)
 }

@@ -18,7 +18,7 @@ fn main() {
     part_two(&input_lines);
 }
 
-fn to_groups<'a>(lines: &[&'a str]) -> Vec<Vec<HashSet<char>>>{
+fn to_groups(lines: &[&str]) -> Vec<Vec<HashSet<char>>>{
     lines.iter().group_by(|line| !line.is_empty()).into_iter().filter_map(|(key, val)| {
         if key { Some(val.map(|s| HashSet::from_iter(s.chars())).collect_vec()) } else { None }
     }).collect_vec()
