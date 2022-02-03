@@ -50,7 +50,7 @@ mod tests {
 
     #[test]
     fn test_part_two_sample() {
-        let result = part_one(true, SAMPLE_PARAM);
+        let result = part_two(true, SAMPLE_PARAM);
         println!("{:?}", result);
         assert_eq!(result, 0);
     }
