@@ -36,24 +36,29 @@ mod tests {
     #[test]
     fn test_part_one_sample() {
         let result = part_one(true, SAMPLE_PARAM);
-        println!("{:?}", result)
+        println!("{:?}", result);
+        assert_eq!(result, 0);
+
     }
 
     #[test]
     fn test_part_one() {
         let result = part_one(false, REAL_PARAM);
-        println!("{:?}", result)
+        println!("{:?}", result);
+        assert_eq!(result, 0);
     }
 
     #[test]
     fn test_part_two_sample() {
         let result = part_one(true, SAMPLE_PARAM);
-        println!("{:?}", result)
+        println!("{:?}", result);
+        assert_eq!(result, 0);
     }
 
     #[test]
     fn test_part_two() {
         let result = part_two(false, REAL_PARAM);
-        println!("{:?}", result)
+        println!("{:?}", result);
+        assert_eq!(result, 0);
     }
 }
