@@ -36,7 +36,7 @@ impl<T> Grid<T> {
         &self.state[self.pos_to_index(pos)]
     }
 
-    fn mut_at(&mut self, pos: (usize, usize)) -> &mut T {
+    fn _mut_at(&mut self, pos: (usize, usize)) -> &mut T {
         let index = self.pos_to_index(pos);
         &mut self.state[index]
     }
@@ -73,7 +73,7 @@ impl<T> Grid<T> {
         let (x, y) = pos;
         let (width, height) = (self.width, self.height);
         let delta = -1..=1;
-        let v = delta
+        delta
             .clone()
             .cartesian_product(delta)
             .filter_map(move |(dx, dy)| {
@@ -102,11 +102,10 @@ impl<T> Grid<T> {
                     //.map(|pos| self.at(pos)))
                 }
             })
-            .collect_vec();
-        v
+            .collect_vec()
     }
 
-    fn to_2d(&self) -> Vec<Vec<&T>> {
+    fn _to_2d(&self) -> Vec<Vec<&T>> {
         self.state
             .chunks(self.width)
             .map(|chunk| chunk.iter().collect_vec())

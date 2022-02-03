@@ -20,9 +20,9 @@ mod tests {
 
     fn get_lines(sample: bool) -> Vec<String> {
         let filename = if sample {
-            "samples/aaaaa.txt"
+            "samples/10.txt"
         } else {
-            "inputs/aaaaa.txt"
+            "inputs/10.txt"
         };
 
         let contents = fs::read_to_string(filename)
