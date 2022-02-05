@@ -7,13 +7,21 @@ fn main() {
     println!("Run unit tests with cargo test");
 }
 
+
+#[derive(FromPrimitive, Copy, Clone, Debug)]
+enum Direction {
+    North = 0,
+    East = 1,
+    South = 2,
+    West = 3,
+}
 #[cfg(test)]
 mod tests {
 
+    use super::*;
     use itertools::Itertools;
     use std::fs;
     use num::complex;
-    use num::pow;
 
     #[derive(Debug, Clone)]
     enum Command {
@@ -37,14 +45,6 @@ mod tests {
                 _ => panic!()
             }
         }
-    }
-
-    #[derive(FromPrimitive, Copy, Clone, Debug)]
-    enum Direction {
-        North = 0,
-        East = 1,
-        South = 2,
-        West = 3,
     }
 
     impl Direction {
