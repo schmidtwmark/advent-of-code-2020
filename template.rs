@@ -8,13 +8,11 @@ mod tests {
     use itertools::Itertools;
     use std::fs;
 
-    fn part_one(sample: bool, _param: usize) -> usize {
-        let _lines = get_lines(sample);
+    fn part_one(lines: Vec<String>, _param: usize) -> usize {
         0
     }
 
-    fn part_two(sample: bool, _param: usize) -> usize {
-        let _lines = get_lines(sample);
+    fn part_two(lines: Vec<String>, _param: usize) -> usize {
         0
     }
 
@@ -35,30 +33,30 @@ mod tests {
 
     #[test]
     fn test_part_one_sample() {
-        let result = part_one(true, SAMPLE_PARAM);
-        println!("{:?}", result);
+        let result = part_one(get_lines(true), SAMPLE_PARAM);
+        println!("Part one sample: {:?}", result);
         assert_eq!(result, 0);
 
     }
 
     #[test]
     fn test_part_one() {
-        let result = part_one(false, REAL_PARAM);
-        println!("{:?}", result);
+        let result = part_one(get_lines(false), REAL_PARAM);
+        println!("Part one real: {:?}", result);
         assert_eq!(result, 0);
     }
 
     #[test]
     fn test_part_two_sample() {
-        let result = part_two(true, SAMPLE_PARAM);
-        println!("{:?}", result);
+        let result = part_two(get_lines(true), SAMPLE_PARAM);
+        println!("Part two sample: {:?}", result);
         assert_eq!(result, 0);
     }
 
     #[test]
     fn test_part_two() {
-        let result = part_two(false, REAL_PARAM);
-        println!("{:?}", result);
+        let result = part_two(get_lines(false), REAL_PARAM);
+        println!("Part two real: {:?}", result);
         assert_eq!(result, 0);
     }
 }
