@@ -16,13 +16,15 @@ mod tests {
         0
     }
 
-    fn get_lines(sample: bool) -> Vec<String> {
-        let filename = if sample {
+    fn get_filename(sample: bool) -> &'static str {
+        if sample {
             "samples/aaaaa.txt"
         } else {
             "inputs/aaaaa.txt"
-        };
+        }
+    }
 
+    fn get_lines(filename: &str) -> Vec<String> {
         let contents = fs::read_to_string(filename)
             .unwrap_or_else(|_| panic!("Something went wrong reading the file {}", filename));
         contents.lines().map(|s| s.to_owned()).collect_vec()
@@ -33,30 +35,30 @@ mod tests {
 
     #[test]
     fn test_part_one_sample() {
-        let result = part_one(get_lines(true), SAMPLE_PARAM);
+        let result = part_one(get_lines(get_filename(true)), SAMPLE_PARAM);
         println!("Part one sample: {:?}", result);
         assert_eq!(result, 0);
-
     }
 
     #[test]
     fn test_part_one() {
-        let result = part_one(get_lines(false), REAL_PARAM);
+        let result = part_one(get_lines(get_filename(false)), REAL_PARAM);
         println!("Part one real: {:?}", result);
         assert_eq!(result, 0);
     }
 
     #[test]
     fn test_part_two_sample() {
-        let result = part_two(get_lines(true), SAMPLE_PARAM);
+        let result = part_two(get_lines(get_filename(true)), SAMPLE_PARAM);
         println!("Part two sample: {:?}", result);
         assert_eq!(result, 0);
     }
 
     #[test]
     fn test_part_two() {
-        let result = part_two(get_lines(false), REAL_PARAM);
+        let result = part_two(get_lines(get_filename(false)), REAL_PARAM);
         println!("Part two real: {:?}", result);
         assert_eq!(result, 0);
     }
+
 }
